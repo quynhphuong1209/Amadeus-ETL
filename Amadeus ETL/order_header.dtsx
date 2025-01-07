@@ -1,0 +1,782 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/7/2025 1:44:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KAB8HQE"
+  DTS:CreatorName="DESKTOP-KAB8HQE\Dell"
+  DTS:DTSID="{65248077-DC89-424F-97F0-76F55B945117}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="order_header"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{9DDCDAC2-61AC-410B-82EF-105D5D759723}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Jade]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{42624955-CE75-4F4C-A0C7-9EA61A629712}"
+      DTS:ObjectName="DESKTOP-KAB8HQE\MSSQLSERVER01.Jade">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-KAB8HQE\MSSQLSERVER01;Initial Catalog=Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{42624955-CE75-4F4C-A0C7-9EA61A629712}DESKTOP-KAB8HQE\MSSQLSERVER01.Jade;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Meta]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{626EE0AC-5CD0-4F77-8E3C-0C5C8B185EA1}"
+      DTS:ObjectName="DESKTOP-KAB8HQE\MSSQLSERVER01.Meta">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-KAB8HQE\MSSQLSERVER01;Initial Catalog=Meta;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{626EE0AC-5CD0-4F77-8E3C-0C5C8B185EA1}DESKTOP-KAB8HQE\MSSQLSERVER01.Meta;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Stage]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D735FFDB-D623-497E-A5E4-79EF7C46BFC2}"
+      DTS:ObjectName="DESKTOP-KAB8HQE\MSSQLSERVER01.Stage">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-KAB8HQE\MSSQLSERVER01;Initial Catalog=Stage;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D735FFDB-D623-497E-A5E4-79EF7C46BFC2}DESKTOP-KAB8HQE\MSSQLSERVER01.Stage;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C2494C4E-91D1-435E-A022-5CC6CE2A8710}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dtCET">
+      <DTS:VariableValue
+        DTS:DataType="7">10/1/2007</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{92062520-DCBC-4DA3-B159-8ADCD502DD37}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="dtLSET">
+      <DTS:VariableValue
+        DTS:DataType="7">10/1/2007</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{25040CD3-AE3A-4616-BA72-8492FA94B92A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Jade order_header"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Jade order_header"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[order_header]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * 
+FROM jade.dbo.order_header
+WHERE (created &gt; ? AND created &lt;= ?)
+   OR (last_updated &gt; ? AND last_updated &lt;= ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{92062520-DCBC-4DA3-B159-8ADCD502DD37};"Parameter1:Input",{C2494C4E-91D1-435E-A022-5CC6CE2A8710};"Parameter2:Input",{92062520-DCBC-4DA3-B159-8ADCD502DD37};"Parameter3:Input",{C2494C4E-91D1-435E-A022-5CC6CE2A8710};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Jade order_header.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Jade]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_date]"
+                      name="order_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[customer_number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[customer_number]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[customer_number]"
+                      name="customer_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[store_number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[store_number]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[store_number]"
+                      name="store_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[currency]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[currency]"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[currency]"
+                      name="currency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[created]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[created]"
+                      name="created"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[last_updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[last_updated]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[last_updated]"
+                      name="last_updated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      dataType="dbTimeStamp"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[customer_number]"
+                      dataType="i4"
+                      name="customer_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[store_number]"
+                      dataType="i4"
+                      name="store_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="currency" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[created]"
+                      dataType="dbTimeStamp"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].ExternalColumns[last_updated]"
+                      dataType="dbTimeStamp"
+                      name="last_updated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      name="order_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[customer_number]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[customer_number]"
+                      name="customer_number" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[store_number]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[store_number]"
+                      name="store_number" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[currency]"
+                      name="currency" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[created]"
+                      name="created" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[last_updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[last_updated]"
+                      name="last_updated" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Stage order_header"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage order_header"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[order_header]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM stage.dbo.order_header;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Stage order_header.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Stage]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-KAB8HQE\MSSQLSERVER01.Stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="i4"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[order_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[order_date]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[order_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[customer_number]"
+                      cachedDataType="i4"
+                      cachedName="customer_number"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[customer_number]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[customer_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[store_number]"
+                      cachedDataType="i4"
+                      cachedName="store_number"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[store_number]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[store_number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[currency]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="currency"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[currency]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[currency]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[created]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].Columns[last_updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="last_updated"
+                      externalMetadataColumnId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[last_updated]"
+                      lineageId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output].Columns[last_updated]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[order_date]"
+                      dataType="dbTimeStamp"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[customer_number]"
+                      dataType="i4"
+                      name="customer_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[store_number]"
+                      dataType="i4"
+                      name="store_number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="currency" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                      dataType="dbTimeStamp"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input].ExternalColumns[last_updated]"
+                      dataType="dbTimeStamp"
+                      name="last_updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Stage order_header.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Stage order_header.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Stage order_header.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Stage order_header.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Stage order_header.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Jade order_header.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Order Header"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FC1F22F5-097B-4A0F-AACF-4E2A0D1ABD23}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Order Header"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F05CFA9C-8596-4934-A1ED-1D69AA2977FE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{626EE0AC-5CD0-4F77-8E3C-0C5C8B185EA1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="SELECT LSET, CET FROM data_flow WHERE name = 'order_header';"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::dtLSET" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::dtCET" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{94AA5E20-6845-4BCB-9135-C306392DD71D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{626EE0AC-5CD0-4F77-8E3C-0C5C8B185EA1}"
+          SQLTask:SqlStatementSource="update meta.dbo.data_flow set CET = getdate() where name = 'order_header';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E121A3B8-1CD4-45A2-B958-073FCE2E66F1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{626EE0AC-5CD0-4F77-8E3C-0C5C8B185EA1}"
+          SQLTask:SqlStatementSource="update data_flow set LSET = CET where name = 'order_header';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3FA66EDD-56D9-4725-AF84-60D25CF7E88D}"
+      DTS:From="Package\Set CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{81195B36-9C1F-4CEE-8DAE-AB8E5932AAE5}"
+      DTS:From="Package\Get LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Extract Order Header" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F0AB4A3C-5AFD-4940-B653-2336023FB0C2}"
+      DTS:From="Package\Extract Order Header"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="5.50000000000004,311.1" />
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\Set CET"
+          TopLeft="219.1,5.49999999999995" />
+        <NodeLayout
+          Size="121.6,42.4"
+          Id="Package\Get LSET"
+          TopLeft="215.9,107.1" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Extract Order Header"
+          TopLeft="187.5,209.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="276.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="276.7,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Set LSET"
+          TopLeft="216.7,311.1" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="276.7,251.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Data Flow Task\Jade order_header"
+          TopLeft="46.4285715274056,57.3529411261985" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Data Flow Task\Stage order_header"
+          TopLeft="302.14285778604,155.235293981577" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="129.628571527406,98.9529411261985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="258.514286258634,56.2823528553787"
+              Start="0,0"
+              End="258.514286258634,48.7823528553787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1411764276894" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1411764276894"
+                    Point2="0,28.1411764276894"
+                    Point3="4,28.1411764276894" />
+                  <mssgle:LineSegment
+                    End="254.514286258634,28.1411764276894" />
+                  <mssgle:CubicBezierSegment
+                    Point1="254.514286258634,28.1411764276894"
+                    Point2="258.514286258634,28.1411764276894"
+                    Point3="258.514286258634,32.1411764276894" />
+                  <mssgle:LineSegment
+                    End="258.514286258634,48.7823528553787" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Jade order_header">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Stage order_header">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
