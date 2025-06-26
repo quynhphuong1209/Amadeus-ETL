@@ -5,7 +5,7 @@
 ---
 
 ## 📁 Cấu trúc thư mục dự án
-
+```plaintext
 Amadeus-ETL/
 ├── Amadeus ETL/ # Dự án chính trong SSIS
 │ ├── Amadeus ETL.database
@@ -20,7 +20,7 @@ Amadeus-ETL/
 ├── Stage.sql # Tạo bảng staging
 ├── Jade.sql # Tạo bảng đích (data mart)
 ├── README.md # Tài liệu này
-
+```
 
 ---
 
